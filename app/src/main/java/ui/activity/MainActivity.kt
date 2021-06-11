@@ -1,5 +1,7 @@
 package ui.activity
 
+import adapters.AlunosAdapeter
+import alunosGlobais
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,10 +23,14 @@ class MainActivity : AppCompatActivity() {
 
         val contatos: MutableList<Aluno> = mutableListOf(
 //            "Alex", "Henri", "Lety","Oi moh"
+//            Aluno(nome = "henrique", telefone = "123123123", email = null)
         )
 
-        val listaContatos: ListView = findViewById(R.id.activity_layout_lista_alunos)
-        listaContatos.adapter = ArrayAdapter<Aluno>(this,android.R.layout.simple_list_item_1,contatos)
+//        val listaContatos: ListView = findViewById(R.id.activity_layout_lista_alunos)
+//       listaContatos.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,contatos)
+        val alunosAdapeter = AlunosAdapeter(this)
+        alunosAdapeter.addAll(alunosGlobais)
+
 
         val botaoNovoAluno: FloatingActionButton = findViewById(R.id.activity_btn_novo_aluno)
         botaoNovoAluno.setOnClickListener{

@@ -18,7 +18,7 @@ class AlunosAdapeter(contexto:Context): ArrayAdapter<Aluno>(contexto, 0) {
             viewReceptora = convertView
         }else{
             //inflar o layout
-            //criar layout do item
+            //criar layout do item depois
             viewReceptora = LayoutInflater.from(context).inflate(R.layout.lista_view_item, parent, false)
         }
 
